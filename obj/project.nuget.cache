@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OKFXIvqeIBs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\AIWareBuilder\\AIWareBuilder.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
