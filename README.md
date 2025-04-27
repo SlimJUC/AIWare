@@ -1,4 +1,4 @@
-# AIWare Builder v2
+# AIWare Builder v2 BETA
 
 ![Application Interface](screen.png)
 
@@ -98,6 +98,9 @@ If no AI API is configured:
 - Files bypass the `/analyze` endpoint
 - All matching files are sent directly to `/upload`
 - Basic file extension filtering still applies
+
+## Beta Notice
+This is currently a beta release. Bugs and issues are expected. Please report any problems by opening an issue in the project repository.
 
 ## Disclaimer
 This tool is provided strictly for educational, red teaming, and authorized research purposes only. Unauthorized use against systems without explicit permission is illegal and unethical.
