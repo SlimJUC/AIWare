@@ -76,22 +76,30 @@ The C2 server must implement these endpoints:
 }
 ```
 
-### Example FastAPI Implementation
-```python
-from fastapi import FastAPI, UploadFile
+### Test Server (server.py)
+For testing purposes without a real C2 server, use the included `server.py`:
 
-app = FastAPI()
-
-@app.post("/analyze")
-async def analyze_sample(sample: bytes):
-    # Implement your AI scoring logic here
-    return {"score": 90, "verdict": "valuable"}
-
-@app.post("/upload") 
-async def upload_file(file: UploadFile):
-    # Save received file
-    return {"status": "ok"}
+1. Install requirements:
+```bash
+pip install fastapi uvicorn
 ```
+
+2. Run the server:
+```bash
+python server.py
+```
+
+3. Configure AIWareBuilder to use:
+```
+http://localhost:8000
+```
+
+This provides:
+- `/analyze` endpoint that returns mock "valuable" verdict
+- `/upload` endpoint that saves files to local directory
+- All received files are prefixed with "stolen_"
+
+Note: This is for testing only - no real AI analysis is performed.
 
 ### Without AI Analysis
 If no AI API is configured:
