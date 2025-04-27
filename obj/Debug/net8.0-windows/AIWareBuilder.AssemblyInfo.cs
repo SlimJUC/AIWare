@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AIWareBuilder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c86146e89fe923c34582b9ea80a739ba408e227")]
 [assembly: System.Reflection.AssemblyProductAttribute("AIWareBuilder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AIWareBuilder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

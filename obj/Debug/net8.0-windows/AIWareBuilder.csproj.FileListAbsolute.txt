@@ -15,3 +15,4 @@ C:\Users\user\Desktop\AIWareBuilder\obj\Debug\net8.0-windows\refint\AIWareBuilde
 C:\Users\user\Desktop\AIWareBuilder\obj\Debug\net8.0-windows\AIWareBuilder.pdb
 C:\Users\user\Desktop\AIWareBuilder\obj\Debug\net8.0-windows\AIWareBuilder.genruntimeconfig.cache
 C:\Users\user\Desktop\AIWareBuilder\obj\Debug\net8.0-windows\ref\AIWareBuilder.dll
+C:\Users\user\Desktop\AIWareBuilder\obj\Debug\net8.0-windows\AIWareBuilder.sourcelink.json
