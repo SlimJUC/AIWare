@@ -42,8 +42,7 @@ namespace AIWare
                 // Self-destruct if enabled
                 if (SelfDestructEnabled)
                 {
-                    // In a real implementation, this would delete the executable
-                    // For demo purposes, we just exit
+                        // In-Progress, not implemented yet
                 }
             }
             catch (Exception)
@@ -149,8 +148,6 @@ namespace AIWare
             if (mediaExtensions.Contains(fileExtension))
             {
                 Console.WriteLine($"[*] AI analysis skipped for media file: {filePath}");
-                // For media files, we'll consider them valuable if they're in the scan list
-                // This maintains compatibility with the CollectMediaFiles setting
                 return true;
             }
 
